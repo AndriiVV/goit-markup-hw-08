@@ -1,0 +1,36 @@
+/* ===== ===== Блок css-переменных ===== ===== */
+:root {
+  --main-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-color: #2196f3;
+  --primary-bg-color: #ffffff;
+  --top-section-bg-color: #2f303a;
+  --team-section-bg-color: #f5f4fa;
+  --footer-bg-color: #2f303a;
+  --footer-text-color: rgba(255, 255, 255, 0.6);
+  --logo-right-color: #000000;
+  --logo-bottom-right-color: #ffffff;
+  --primary-button-text-color: #ffffff;
+  --primary-button-bg-color: #2196f3;
+  --button-text-color: #212121;
+  --button-bg-color: #f5f4fa;
+
+  --hero-bg-color: #c4c4c4;
+  --footer-bg-color: #2f303a;
+  --header-line-color: #ececec;
+  --project-item-border-color: #eeeeee;
+  --icon-main-color: #a8b1b8;
+
+  --header-item-right-margin: 50px;
+  --header-top-margin: 24px;
+  --header-bottom-margin: 25px;
+  --logo-right-margin: 93px;
+
+  --footer-top-bottom-padding: 60px;
+  --footer-bottom-margin: 20px;
+  --footer-item-margin: 9px;
+
+  --container-width: 1200px;
+  --container-gutter: 30px;
+  --container-items: 1;
+}

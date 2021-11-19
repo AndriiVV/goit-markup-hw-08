@@ -1,0 +1,152 @@
+/* ===== ===== Классы для оформления footer-секции ===== ===== */
+.footer {
+  background-color: var(--footer-bg-color);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: var(--footer-top-bottom-padding);
+  padding-bottom: var(--footer-top-bottom-padding);
+
+  &__main-footer {
+    display: flex;
+  }
+}
+
+.footer-left {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    // @include font-parameters(400, 14px, 24px, 0.03em);
+  }
+
+  &__top-margin {
+    margin-top: var(--footer-bottom-margin);
+  }
+
+  &__address {
+    color: var(--primary-bg-color);
+    @include font-parameters(400, 14px, 24px, 0.03em);
+    font-style: normal;
+  }
+
+  &__contacts {
+    color: var(--footer-text-color);
+    @include font-parameters(400, 14px, 24px, 0.03em);
+    font-style: normal;
+    text-decoration: none;
+    margin-top: var(--footer-item-margin);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
+  }
+}
+
+.footer-center {
+  padding-top: 48px;
+  padding-left: 70px;
+}
+
+.join-us {
+  display: flex;
+  gap: 10px;
+  position: relative;
+
+  &::before {
+    content: 'Присоединяйтесь';
+    position: absolute;
+    top: calc(-20px - 16px);
+    left: 0;
+    color: var(--primary-bg-color);
+    text-transform: uppercase;
+    @include font-parameters(700, 14px, 16px, 0.03em);
+  }
+
+  &__item {
+    width: 44px;
+    height: 44px;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color);
+      color: var(--primary-bg-color);
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+  }
+}
+
+.footer-right {
+  margin-left: 93px;
+  padding-top: 12px;
+}
+
+.signup-form {
+  display: flex;
+}
+
+.signup-email {
+  &__label {
+    display: block;
+    color: var(--primary-bg-color);
+    @include font-parameters(700, 14px, 16px, 0.03em);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+    width: 358px;
+    height: 50px;
+    color: rgba(255, 255, 255, 0.6);
+    @include font-parameters(400, 16px, 20px, 0.03em);
+    padding-left: 16px;
+  }
+}
+
+.signup-btn {
+  margin-top: 36px;
+  margin-left: 12px;
+
+  &__button {
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+    height: 50px;
+    color: var(--primary-bg-color);
+    @include font-parameters(700, 16px, 30px, 0.06em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    fill: currentcolor;
+  }
+}

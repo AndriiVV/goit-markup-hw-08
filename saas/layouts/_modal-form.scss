@@ -1,0 +1,214 @@
+/* ===== ===== Классы для оформления модального окна ===== ===== */
+
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: all 1250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &_is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    & .modal {
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--primary-bg-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  padding: 40px;
+  transition: transform 1250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &__button {
+    padding: 0px;
+  }
+
+  &__form-title {
+    color: var(--title-text-color);
+    @include font-parameters(700, 20px, 23px, 0.03em);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  &__form-field {
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &:focus-within .modal__form-icon {
+      fill: var(--accent-color);
+    }
+  }
+
+  &__form-label {
+    color: var(--main-text-color);
+    margin-bottom: 4px;
+    @include font-parameters(400, 12px, 14px, 0.01em);
+  }
+
+  &__form-icon {
+    height: 18px;
+    width: 18px;
+    fill: var(--title-text-color);
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__form-input {
+    color: rgba(117, 117, 117, 0.5);
+    height: 40px;
+    width: 100%;
+    padding: 12px 12px 12px 42px;
+    color: var(--main-text-color);
+    @include font-parameters(400, 14px, 16px, 0.03em);
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+  }
+
+  &__comment-input {
+    margin-top: 4px;
+    height: 138px;
+    width: 100%;
+    padding: 12px 16px;
+    color: var(--main-text-color);
+    @include font-parameters(400, 14px, 16px, 0.03em);
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    resize: none;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--accent-color);
+    }
+
+    &::placeholder {
+      color: rgba(117, 117, 117, 0.5);
+      @include font-parameters(400, 14px, 16px, 0.01em);
+    }
+  }
+
+  &__submit-button {
+    display: block;
+    color: var(--primary-bg-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 4px;
+
+    width: 200px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include font-parameters(700, 16px, 30px, 0.06em);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      background-color: #188ce8;
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__icon {
+    fill: black;
+    width: 18px;
+    height: 18px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover .close-btn__icon,
+  &:focus .close-btn__icon {
+    fill: var(--accent-color);
+  }
+}
+
+.form-agreement {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  &__check-text {
+    color: var(--main-text-color);
+    @include font-parameters(400, 14px, 24px, 0.03em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      width: 16px;
+      height: 15px;
+      border: 2px solid var(--title-text-color);
+      border-radius: 1px;
+      margin-right: 8px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__input-icon-check {
+    fill: var(--primary-bg-color);
+  }
+
+  &__input-check {
+    &:checked + .form-agreement__check-text span {
+      background-color: var(--accent-color);
+      border: none;
+    }
+  }
+
+  &__link {
+    color: var(--accent-color);
+  }
+}

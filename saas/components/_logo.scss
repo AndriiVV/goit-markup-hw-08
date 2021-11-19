@@ -1,0 +1,19 @@
+/* Классы для оформления лого сайта */
+.logo {
+  color: var(--accent-color);
+  @include font-logo();
+  @include font-parameters(700, 26px, 31px);
+  text-decoration: none;
+
+  &__r-margin {
+    margin-right: var(--logo-right-margin);
+  }
+
+  &__right {
+    color: var(--logo-right-color);
+  }
+
+  &__bottom {
+    color: var(--logo-bottom-right-color);
+  }
+}

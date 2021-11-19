@@ -1,0 +1,27 @@
+/* ===== ===== Глобальный сброс стилей некоторым тэгам ===== ===== */
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Класс для скрытия зазоров у элемента img */
+.img-no-gap {
+  display: block;
+}
+
+/* временный класс для скрытия элементов */
+.hidden {
+  display: none;
+}

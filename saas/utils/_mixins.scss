@@ -1,0 +1,15 @@
+@mixin main-font() {
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+@mixin font-logo() {
+  font-family: Raleway, sans-serif;
+}
+
+@mixin font-parameters($fw, $fz, $lh, $ls: 0.03em) {
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh/$fz;
+  letter-spacing: $ls;
+}
