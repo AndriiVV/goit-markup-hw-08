@@ -1,17 +1,20 @@
 /* ===== ===== Классы для оформления секции "Чем мы занимаемся" ===== ===== */
 
 .about {
+  padding-top: 0;
+  @media screen and (max-width: $desktop - 1px) {
+    display: none;
+  }
+}
+
+.about-us {
   display: flex;
+  gap: var(--container-gutter);
   --container-items: 3;
 
   &__item {
     flex-basis: calc(var(--container-width) / var(--container-items) - var(--container-gutter));
-    margin-right: var(--container-gutter);
     position: relative;
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 
   &__item-description {

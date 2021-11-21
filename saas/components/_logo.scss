@@ -2,8 +2,12 @@
 .logo {
   color: var(--accent-color);
   @include font-logo();
-  @include font-parameters(700, 26px, 31px);
+  @include font-parameters(700, 24px, 28px);
   text-decoration: none;
+
+  @media screen and (min-width: $desktop) {
+    @include font-parameters(700, 26px, 31px);
+  }
 
   &__r-margin {
     margin-right: var(--logo-right-margin);

@@ -2,15 +2,32 @@
 .page {
   background-color: var(--primary-bg-color);
   color: var(--main-text-color);
-
   @include main-font();
+  overflow-x: visible;
+
+  @media screen and (min-width: 320px) {
+    overflow-x: hidden;
+  }
 }
 
 /* Класс для оформления основного контейнера */
 
 .container {
+  width: 100%;
+  // min-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  width: var(--container-width);
   padding: 0 calc(var(--container-gutter) / 2);
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+  }
 }

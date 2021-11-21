@@ -2,11 +2,37 @@
 
 .clients {
   display: flex;
-  --container-items: 6;
+  flex-wrap: wrap;
+  --container-items: 1;
   gap: 30px;
 
+  @media screen and (min-width: $mobile) {
+    --container-items: 2;
+  }
+
+  @media screen and (min-width: $tablet) {
+    --container-items: 3;
+  }
+
+  @media screen and (min-width: $desktop) {
+    --container-items: 6;
+  }
+
   &__item {
-    flex-basis: calc(var(--container-width) / var(--container-items) - var(--container-gutter));
+    flex-basis: calc(var(--width-mobile) / var(--container-items) - var(--container-gutter));
+    height: 92px;
+
+    @media screen and (min-width: $mobile) {
+      flex-basis: calc(var(--width-mobile) / var(--container-items) - var(--container-gutter));
+    }
+
+    @media screen and (min-width: $tablet) {
+      flex-basis: calc(var(--width-tablet) / var(--container-items) - var(--container-gutter));
+    }
+
+    @media screen and (min-width: $desktop) {
+      flex-basis: calc(var(--width-desktop) / var(--container-items) - var(--container-gutter));
+    }
   }
 
   &__link {
@@ -17,7 +43,6 @@
     background-color: var(--primary-bg-color);
     color: var(--icon-main-color);
     display: flex;
-    padding: 16px 32px;
     align-items: center;
     justify-content: center;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
