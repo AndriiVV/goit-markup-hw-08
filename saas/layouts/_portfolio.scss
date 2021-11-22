@@ -3,7 +3,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  --container-items: 3;
+  --container-items: 1;
+
+  @media screen and (min-width: $tablet) {
+    --container-items: 2;
+  }
+
+  @media screen and (min-width: $desktop) {
+    --container-items: 3;
+  }
 
   &__card {
     padding: 20px 24px;
@@ -22,8 +30,18 @@
   }
 
   &__item {
-    flex-basis: calc(var(--container-width) / var(--container-items) - var(--container-gutter));
+    flex-basis: calc(var(--width-mobile) / var(--container-items) - var(--container-gutter));
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: $tablet) {
+      flex-basis: calc(var(--width-tablet) / var(--container-items) - var(--container-gutter));
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @media screen and (min-width: $desktop) {
+      flex-basis: calc(var(--width-desktop) / var(--container-items) - var(--container-gutter));
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
     &:hover {
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),

@@ -1051,7 +1051,19 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  --container-items: 3;
+  --container-items: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .projects {
+    --container-items: 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects {
+    --container-items: 3;
+  }
 }
 
 .projects__card {
@@ -1075,8 +1087,22 @@ img {
 }
 
 .projects__item {
-  flex-basis: calc(var(--container-width) / var(--container-items) - var(--container-gutter));
+  flex-basis: calc(var(--width-mobile) / var(--container-items) - var(--container-gutter));
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .projects__item {
+    flex-basis: calc(var(--width-tablet) / var(--container-items) - var(--container-gutter));
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects__item {
+    flex-basis: calc(var(--width-desktop) / var(--container-items) - var(--container-gutter));
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .projects__item:hover {
@@ -1117,12 +1143,33 @@ img {
 /* ===== ===== Классы для оформления кнопок ===== ===== */
 .portfolio {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio {
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio {
+    margin-bottom: 50px;
+  }
 }
 
 .portfolio__item:not(:last-child) {
   margin-right: 8px;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio__item:not(:last-child) {
+    margin-bottom: 0px;
+  }
 }
 
 .portfolio__filter-button {
