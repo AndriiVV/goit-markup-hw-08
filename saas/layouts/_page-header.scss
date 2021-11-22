@@ -7,6 +7,13 @@
   padding-bottom: 16px;
 
   @media screen and (min-width: $tablet) {
+    // padding-top: var(--header-top-margin);
+    // padding-bottom: var(--header-bottom-margin);
+    padding: 0px;
+    height: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
     padding-top: var(--header-top-margin);
     padding-bottom: var(--header-bottom-margin);
   }
@@ -24,6 +31,16 @@
 .header-subset {
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 26px;
+    margin-bottom: 26px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 /* ===== ===== Стилизация навигации сайта ===== ===== */
@@ -73,17 +90,16 @@
 
 .site-contacts {
   display: none;
-}
 
-@media screen and (min-width: $tablet) {
-  .site-contacts {
+  @media screen and (min-width: $tablet) {
     display: flex;
+    flex-direction: column;
 
     &__item {
-      align-items: center;
+      // align-items: center;
 
       &:not(:last-child) {
-        margin-right: var(--header-item-right-margin);
+        margin-bottom: 10px;
       }
     }
 
@@ -99,6 +115,34 @@
       height: 16px;
       margin-right: 10px;
       fill: currentcolor;
+    }
+
+    &__link {
+      color: var(--main-text-color);
+
+      @include font-parameters(500, 14px, 16px, 0.02em);
+      text-decoration: none;
+
+      display: flex;
+
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+
+    &__item {
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-right: var(--header-item-right-margin);
+      }
     }
 
     &__link {

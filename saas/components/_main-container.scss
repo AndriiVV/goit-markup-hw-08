@@ -13,8 +13,8 @@
 /* Класс для оформления основного контейнера */
 
 .container {
-  width: 100%;
-  // min-width: 320px;
+  // width: 100%;
+  min-width: 320px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 calc(var(--container-gutter) / 2);

@@ -10,7 +10,11 @@
   }
 
   &__r-margin {
-    margin-right: var(--logo-right-margin);
+    margin-right: 88px;
+
+    @media screen and (min-width: $desktop) {
+      margin-right: var(--logo-right-margin);
+    }
   }
 
   &__right {

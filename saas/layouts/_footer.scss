@@ -5,6 +5,7 @@
   margin-right: auto;
   padding-top: var(--footer-top-bottom-padding);
   padding-bottom: var(--footer-top-bottom-padding);
+  min-width: 320px;
 
   &__main-footer {
     display: flex;
@@ -180,6 +181,12 @@
 }
 
 .signup-email {
+  min-width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    min-width: auto;
+  }
+
   &__label {
     display: block;
     color: var(--primary-bg-color);
@@ -208,6 +215,8 @@
 
     @media screen and (min-width: $mobile) {
       width: 450px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @media screen and (min-width: $desktop) {
