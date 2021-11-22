@@ -25,7 +25,11 @@
             <li class="site-nav__item"><a href="" class="site-nav__link">Контакты</a></li>
           </ul>
         </nav>
-  
+        <button type="button" class="header-btn" data-menu-open>
+          <svg class="header-btn__icon">
+            <use href="./images/icons.svg#icon-menu-open-btn"></use>
+          </svg>
+        </button>
         <ul class="site-contacts">
           <li class="site-contacts__item">
             <a href="mailto:info@devstudio.com" class="site-contacts__link"><svg class="site-contacts__email-icon"><use href="./images/icons.svg#icon-envelope"></use></svg>info@devstudio.com</a>
@@ -36,6 +40,38 @@
         </ul>
       </div>
     </div>
+
+    <!-- Мобильное меню -->
+    <div class="menu-mobile menu-mobile_is-hidden" data-menu>
+      <button type="button" class="menu-btn" data-menu-close>
+        <svg class="menu-btn__icon">
+          <use href="./images/icons.svg#icon-menu-close-btn"></use>
+        </svg>
+      </button>
+      <div class="menu-mobile__top">
+        <ul class="menu-mobile__links">
+          <li class="menu-mobile__links-item"><a href="./index.html"
+              class="menu-mobile__links-description">Студия</a></li>
+          <li class="menu-mobile__links-item"><a href="./portfolio.html"
+              class="menu-mobile__links-description current">Портфолио</a></li>
+          <li class="menu-mobile__links-item"><a href="#" class="menu-mobile__links-description">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="menu-mobile__contacts">
+        <a href="tel:+380961111111" class="menu-mobile__phone">+38 096 111 11 11</a>
+        <a href="mailto:info@devstudio.com" class="menu-mobile__email">info@devstudio.com</a>
+        <div>
+          <ul class="menu-mobile__socials">
+            <li class="menu-mobile__socials-link">Instagram</li>
+            <li class="menu-mobile__socials-link">Twitter</li>
+            <li class="menu-mobile__socials-link">Facebook</li>
+            <li class="menu-mobile__socials-link">LinkedIn</li>
+          </ul>
+        </div>
+      </div>
+    
+    </div>
+
   </header>
 
   <main>
@@ -254,6 +290,8 @@
         </div>
       </div>
   </footer>
+
+  <script src="./js/menu.js"></script>
 
 </body>
 </html>
